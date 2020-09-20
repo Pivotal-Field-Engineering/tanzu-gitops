@@ -1,7 +1,6 @@
 # Tanzu GitOps
 The goal of this repo is to use the Tanzu portfolio to create easy-to-use, low maintenance Kubernetes environments for developers.
 
-Note: This repo will need some tweaking to work in your environment. 
 
 Tanzu Kubernetes Grid Integrated Edition:
 * Kubernetes cluster lifecycle platform

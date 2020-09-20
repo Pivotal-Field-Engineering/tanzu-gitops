@@ -1,7 +1,7 @@
 # Tanzu GitOps
 The goal of this repo is to use the Tanzu portfolio to create easy-to-use, low maintenance Kubernetes environments for developers.
 
-Note: This repo will need some tweaking to work in your environment. 
+Use the [gtm-e2e-demo](https://github.com/Pivotal-Field-Engineering/tanzu-gitops/blob/gtm-e2e-demo/README.md) branch to setup and execute a simpler version of the demo
 
 Tanzu Kubernetes Grid Integrated Edition:
 * Kubernetes cluster lifecycle platform

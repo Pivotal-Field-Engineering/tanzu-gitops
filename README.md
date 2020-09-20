@@ -23,12 +23,6 @@ Tanzu Build Service:
 * Build secure OCI images without Docker
 * Keep images up-to-date on latest golden image
 
-Tanzu Application Catalog:
-* Build trusted Helm charts and images onto your golden image
-* Provide helpful audit information for the images, like CVE scans and open-source licenses
-
-Tanzu Application Service:
-* Managed multi-tenancy for teams that don't want to touch Kubernetes
 
 ## Install Steps
 
@@ -107,32 +101,6 @@ Create 7 clusters:
 1. `./secrets-spring-petclinic.sh`
 1. `./install-spring-petclinic.sh`
 
-### product-api
-1. `./install-vsphere-storage.sh`
-1. `./install-sealedsecrets.sh`
-1. `./install-helm-operator.sh`
-1. `./install-ingress-nginx.sh`
-1. `./secrets-product-api.sh`
-1. `./install-product-api.sh`
-
-### Kubeapps
-1. `./install-vsphere-storage.sh`
-1. `./install-sealedsecrets.sh`
-1. `./install-helm-operator.sh`
-1. `./install-ingress-nginx.sh`
-1. `./install-cert-manager.sh`
-1. `./secrets-cert-manager.sh`
-1. `./install-kubeapps.sh`
-1. `./configure-kubeapps.sh`
-
-### TAS
-1. `./install-vsphere-storage.sh`
-1. `./install-sealedsecrets.sh`
-1. `./install-helm-operator.sh`
-1. `./install-minibroker.sh`
-1. `./install-tas.sh`
-1. `./secrets-tas.sh`
-1. `./configure-tas.sh`
 
 ## Component descriptions
 
@@ -163,9 +131,6 @@ Concourse is a container workflow tool commonly used for "CI/CD". Container work
 ### spring-petclinic
 [spring-petclinic](https://github.com/techgnosis/spring-petclinic) is a canonical example of a Spring Boot app. spring-petclinic can use an external MySQL instance instead of its own in-memory DB.
 
-### Kubeapps
-Kubeapps is a GUI for Helm that makes it easy to explore Helm repos
-
 ### Wavefront
 The Concourse pipeline in this project creates a Wavefront Event after a new image is deployed. In order for this to work, you need to setup Wavefront. Follow these steps to get Wavefront ready:
 1. Follow the [Spring Boot Wavefront tutorial](https://docs.wavefront.com/wavefront_springboot_tutorial.html) to get Spring-Petclinic integrated with Wavefront
@@ -175,14 +140,3 @@ The Concourse pipeline in this project creates a Wavefront Event after a new ima
 1. Click "Advanced"
 1. Add the following events query `events(name="tanzu-gitops-spring-petclinic-deploy")`
 1. In your dashboard at the top right where it says "Show Events" change it to "From Dashboard Settings". This will cause your events query to be the source of events for all charts in your dashboard.
-
-
-## Quirks I have observed
-* Kubeapps only seems to behave if it is installed in the `default` namespace. Otherwise it doesn't recognize App Respositories when you try to install anything in a different namespace than `default`.
-
-
-## TODO
-* Combine spring-petclinic and product-api into the same cluster called `diy`. Use some RBAC to make it work. Apply it with TMC.
-* Add a pipeline to get test-app into TAS
-* Learn how to use NSX-T so I don't have to set my ingress controller to `hostNetwork: true` in order to use port 443
-* When using OIDC for K8s auth, how do you provide a username and password to `tkgi get-credentials` for use with Concourse? Otherwise I get a password prompt when using OIDC. It seems its an environment variable.

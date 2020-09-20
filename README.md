@@ -1,5 +1,6 @@
-# Tanzu GitOps
-The goal of this repo is to use the Tanzu portfolio to create easy-to-use, low maintenance Kubernetes environments for developers.
+# Tanzu E2E 101
+The goal of this repo is to make it easy to create a Tanzu E2E environment for simple demo purposes.
+This `gtm-e2e-demo` branch is focused on a developer pipeline that turns a Git commit into a secure deployed application.
 
 
 Tanzu Kubernetes Grid Integrated Edition:
@@ -21,6 +22,13 @@ Tanzu Observability:
 Tanzu Build Service:
 * Build secure OCI images without Docker
 * Keep images up-to-date on latest golden image
+
+Harbor
+* Best-in-class OCI compliant Docker registry
+* Automatically scans images for CVEs
+
+Concourse
+* Container-native CI/CD tool
 
 
 ## Install Steps

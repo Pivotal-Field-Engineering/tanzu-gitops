@@ -2,7 +2,7 @@
 The goal of this repo is to make it easy to create a Tanzu E2E environment for simple demo purposes.
 This `gtm-e2e-demo` branch is focused on a developer pipeline that turns a Git commit into a secure deployed application.
 
-See [SCRIPT.md](script.md) for ideas on how to deliver the demo.
+See [SCRIPT.md](SCRIPT.md) for ideas on how to deliver the demo.
 
 
 Tanzu Kubernetes Grid Integrated Edition:
